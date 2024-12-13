@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="matthew neward">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <title>contacts</title>
+</head>
+<body>
+
+<p id="Table"></p>
+<p id="niceMessage"></p>
+
+<script>
+    //make array
+    const contacts=[`matthew`, `michael`, `charlotte`, `ted`, `donna`, `lance`];
+    //set up table
+    let table="";
+    //table 
+    contacts.forEach(showArray); 
+        function showArray(item,index){
+            table += index + ": " + item + "\n" + `<br>`;
+        }
+        document.getElementById("Table").innerHTML=table;
+    //set up number of slots???
+    numSlot=contacts.length
+    //loop
+    do{
+        entryNum=prompt(`please enter "entry number"`)
+        if (entryNum>=numSlot){
+            prompt(`That entry is not in the Database. \n Would you like to make another selection? y/n`)
+        }else{
+            repeat=prompt(`displaying ${contacts[entryNum]}. \n Would you like to make another selection? y/n`)
+        }
+    }
+    while (repeat.toLowerCase()===`y`? true : false)
+    //goodbye message
+    document.getElementById('niceMessage').innerHTML=`thanks for using the contacts list, hope to be helpful again soon`
+</script>
+</body>
+</html>
